@@ -3,7 +3,7 @@
 
 const { getSelectors, FacetCutAction } = require('./libraries/diamond.js')
 
-async function main () {
+async function deployDiamond () {
   const accounts = await ethers.getSigners()
   const contractOwner = accounts[0]
 
@@ -60,13 +60,24 @@ async function main () {
     throw Error(`Diamond upgrade failed: ${tx.hash}`)
   }
   console.log('Completed diamond cut')
+  return diamond.address
+
+//   console.log(diamondInit.interface.getSighash('init'))
+//   console.log(diamondInit.interface.getFunction('init'))
+//   console.log(diamondInit.interface.getFunction('init').format(ethers.utils.FormatTypes.full))
+//   console.log(diamondInit.interface.getFunction('init').format(ethers.utils.FormatTypes.minimal))
+//   console.log(diamondInit.interface.getFunction('0xe1c7392a').format(ethers.utils.FormatTypes.sighash))
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-main()
-  .then(() => process.exit(0))
-  .catch(error => {
-    console.error(error)
-    process.exit(1)
-  })
+if (require.main === module) {
+  deployDiamond()
+    .then(() => process.exit(0))
+    .catch(error => {
+      console.error(error)
+      process.exit(1)
+    })
+}
+
+exports.deployDiamond = deployDiamond
