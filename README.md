@@ -1,4 +1,4 @@
-# Diamond-1-Hardhat Implementation
+# Diamond-3-Hardhat Implementation
 
 This is a reference implementation for [EIP-2535 Diamonds](https://github.com/ethereum/EIPs/issues/2535). To learn about other implementations go here: https://github.com/mudgen/diamond
 
