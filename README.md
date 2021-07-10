@@ -2,6 +2,8 @@
 
 This is a reference implementation for [EIP-2535 Diamonds](https://github.com/ethereum/EIPs/issues/2535). To learn about other implementations go here: https://github.com/mudgen/diamond
 
+This implementation uses Hardhat and Solidity 0.8.*
+
 ## Installation
 
 1. Clone this repo:
