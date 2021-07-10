@@ -1,16 +1,16 @@
-# Diamond-1 Implementation
+# Diamond-1-hardhat Implementation
 
 This is a reference implementation for [EIP-2535 Diamonds](https://github.com/ethereum/EIPs/issues/2535). To learn about other implementations go here: https://github.com/mudgen/diamond
 
 # Installation
 
 1. Clone this repo:
-```bash
+```console
 git clone git@github.com:mudgen/diamond-1-hardhat.git
 ```
 
 2. Install NPM packages:
-```bash
+```console
 cd diamond-1-hardhat
 npm install
 ```
