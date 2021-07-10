@@ -1,4 +1,4 @@
-# Diamond-1-hardhat Implementation
+# Diamond-1-Hardhat Implementation
 
 This is a reference implementation for [EIP-2535 Diamonds](https://github.com/ethereum/EIPs/issues/2535). To learn about other implementations go here: https://github.com/mudgen/diamond
 
@@ -83,12 +83,12 @@ In this example we know we will use a diamond because we pass a diamond's addres
 Similarly you need to use the ABI of a facet in Solidity code in order to call functions from a diamond. Here's an example of Solidity code that calls a function from a diamond:
 
 ```solidity
-string result = MyUsefulFacet(diamondAddress).getResult()
+string result = MyUsefulFacet(address(diamondContract)).getResult()
 ```
 
 ## Get Help and Join the Community
 
-If you need help or would like to discuss diamonds then send me a message [on twitter](https://twitter.com/mudgen), or [email me](mailto:nick@perfectabstractions.com). Or join the [Diamond Standard Discord server](https://discord.gg/kQewPw2).
+If you need help or would like to discuss diamonds then send me a message [on twitter](https://twitter.com/mudgen), or [email me](mailto:nick@perfectabstractions.com). Or join the [EIP-2535 Diamonds Discord server](https://discord.gg/kQewPw2).
 
 ## Useful Links
 
