@@ -61,12 +61,6 @@ async function deployDiamond () {
   }
   console.log('Completed diamond cut')
   return diamond.address
-
-//   console.log(diamondInit.interface.getSighash('init'))
-//   console.log(diamondInit.interface.getFunction('init'))
-//   console.log(diamondInit.interface.getFunction('init').format(ethers.utils.FormatTypes.full))
-//   console.log(diamondInit.interface.getFunction('init').format(ethers.utils.FormatTypes.minimal))
-//   console.log(diamondInit.interface.getFunction('0xe1c7392a').format(ethers.utils.FormatTypes.sighash))
 }
 
 // We recommend this pattern to be able to use async/await everywhere
