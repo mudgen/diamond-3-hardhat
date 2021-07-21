@@ -1,4 +1,4 @@
-/* global ethers hre */
+/* global ethers */
 /* eslint prefer-const: "off" */
 
 const { getSelectors, FacetCutAction } = require('./libraries/diamond.js')
