@@ -48,10 +48,6 @@ Note that any number of functions from any number of facets can be added/replace
 
 ## Facet Information
 
-**Note:** In this implementation the loupe functions are NOT gas optimized. The `facets`, `facetFunctionSelectors`, `facetAddresses` loupe functions are not meant to be called on-chain and may use too much gas or run out of gas when called in on-chain transactions. In this implementation these functions should be called by off-chain software like websites and Javascript libraries etc., where gas costs do not matter.
-
-However the `facetAddress` loupe function is gas efficient and can be called in on-chain transactions.
-
 The `contracts/Diamond.sol` file shows an example of implementing a diamond.
 
 The `contracts/facets/DiamondCutFacet.sol` file shows how to implement the `diamondCut` external function.
