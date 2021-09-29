@@ -39,7 +39,7 @@ async function deployDiamond () {
     const Facet = await ethers.getContractFactory(FacetName)
     const facet = await Facet.deploy()
     await facet.deployed()
-    console.log(`${FacetName} deployed: ${diamondInit.address}`)
+    console.log(`${FacetName} deployed: ${facet.address}`)
     cut.push({
       facetAddress: facet.address,
       action: FacetCutAction.Add,
