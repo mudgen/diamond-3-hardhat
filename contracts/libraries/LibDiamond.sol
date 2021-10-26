@@ -56,14 +56,18 @@ library LibDiamond {
     /// @notice _calldata is empty but _init is not address(0)
     error InitIsNotZeroAddress();
 
+    /// @dev Emitted when `contractOwner` is transferred from `previousOwner` to `newOwner`.
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+
+    /// @dev Emitted when any functions are added, replaced or removed on a facet.
+    event DiamondCut(IDiamondCut.FacetCut[] _diamondCut, address _init, bytes _calldata);
+
     function diamondStorage() internal pure returns (DiamondStorage storage ds) {
         bytes32 position = DIAMOND_STORAGE_POSITION;
         assembly {
             ds.slot := position
         }
     }
-
-    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
     function setContractOwner(address _newOwner) internal {
         DiamondStorage storage ds = diamondStorage();
@@ -79,8 +83,6 @@ library LibDiamond {
     function enforceIsContractOwner() internal view {
         if (msg.sender != diamondStorage().contractOwner) revert NotContractOwner(msg.sender);
     }
-
-    event DiamondCut(IDiamondCut.FacetCut[] _diamondCut, address _init, bytes _calldata);
 
     // Internal function version of diamondCut
     function diamondCut(
