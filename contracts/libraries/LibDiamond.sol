@@ -36,23 +36,33 @@ library LibDiamond {
     }
 
     /// `sender` is not the contract owner.
+    /// @param sender The address of the sender.
     error NotContractOwner(address sender);
+
     /// @notice No selectors in facet to cut
     error NoSelectors();
+
     /// @notice Add facet can't be address(0)
     error ZeroAddress();
+
     /// @notice Can't add function that already exists
     error AlreadyExists();
+
     /// @notice Can't replace function with same function
     error SameFunction();
+
     /// @notice Remove facet address must be address(0)
     error NotZeroAddress();
+
     /// @notice Can't remove function that doesn't exist
     error DoesNotExist();
+
     /// @notice Can't remove immutable function
     error ImmutableFunction();
+
     /// @notice _init is address(0) but_calldata is not empty
     error CalldataIsNotEmpty();
+
     /// @notice _calldata is empty but _init is not address(0)
     error InitIsNotZeroAddress();
 
