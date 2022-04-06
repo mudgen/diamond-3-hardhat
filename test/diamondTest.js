@@ -171,7 +171,7 @@ describe('DiamondTest', async function () {
     assert.sameMembers(result, getSelectors(test1Facet).get(functionsToKeep))
   })
 
-  it('remove all functions and facets accept \'diamondCut\' and \'facets\'', async () => {
+  it('remove all functions and facets except \'diamondCut\' and \'facets\'', async () => {
     let selectors = []
     let facets = await diamondLoupeFacet.facets()
     for (let i = 0; i < facets.length; i++) {
