@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.4;
 
 /******************************************************************************\
 * Author: Nick Mudge <nick@perfectabstractions.com> (https://twitter.com/mudgen)
@@ -16,6 +16,9 @@ interface IDiamondCut {
         bytes4[] functionSelectors;
     }
 
+    /// @dev Emitted when any functions are added, replaced or removed on a facet.
+    event DiamondCut(FacetCut[] _diamondCut, address _init, bytes _calldata);
+
     /// @notice Add/replace/remove any number of functions and optionally execute
     ///         a function with delegatecall
     /// @param _diamondCut Contains the facet addresses and function selectors
@@ -27,6 +30,4 @@ interface IDiamondCut {
         address _init,
         bytes calldata _calldata
     ) external;
-
-    event DiamondCut(FacetCut[] _diamondCut, address _init, bytes _calldata);
 }
