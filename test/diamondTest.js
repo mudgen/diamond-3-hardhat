@@ -247,3 +247,140 @@ describe('DiamondTest', async function () {
     assert.sameMembers(facets[findAddressPositionInFacets(addresses[4], facets)][1], getSelectors(Test2Facet))
   })
 })
+
+/*
+
+Cache bug test
+DiamondCutFacet deployed: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+Diamond deployed: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+DiamondInit deployed: 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
+
+Deploying facets
+DiamondLoupeFacet deployed: 0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9
+OwnershipFacet deployed: 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9
+
+Diamond Cut: [
+  {
+    facetAddress: '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9',
+    action: 0,
+    functionSelectors: [
+      '0xcdffacc6',
+      '0x52ef6b2c',
+      '0xadfca15e',
+      '0x7a0ed627',
+      '0x01ffc9a7',
+      contract: [Contract],
+      remove: [Function: remove],
+      get: [Function: get]
+    ]
+  },
+  {
+    facetAddress: '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9',
+    action: 0,
+    functionSelectors: [
+      '0x8da5cb5b',
+      '0xf2fde38b',
+      contract: [Contract],
+      remove: [Function: remove],
+      get: [Function: get]
+    ]
+  }
+]
+Diamond cut tx:  0xcb102437ddd71a4c98d8fc4e20c9ed136930cc277518dce24f843c82ab19d748
+Completed diamond cut
+    ✓ should not exhibit the cache bug (51ms)
+
+  DiamondTest
+DiamondCutFacet deployed: 0x8A791620dd6260079BF849Dc5567aDC3F2FdC318
+Diamond deployed: 0x610178dA211FEF7D417bC0e6FeD39F05609AD788
+DiamondInit deployed: 0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e
+
+Deploying facets
+DiamondLoupeFacet deployed: 0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0
+OwnershipFacet deployed: 0x0DCd1Bf9A1b36cE34237eEaFef220932846BCD82
+
+Diamond Cut: [
+  {
+    facetAddress: '0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0',
+    action: 0,
+    functionSelectors: [
+      '0xcdffacc6',
+      '0x52ef6b2c',
+      '0xadfca15e',
+      '0x7a0ed627',
+      '0x01ffc9a7',
+      contract: [Contract],
+      remove: [Function: remove],
+      get: [Function: get]
+    ]
+  },
+  {
+    facetAddress: '0x0DCd1Bf9A1b36cE34237eEaFef220932846BCD82',
+    action: 0,
+    functionSelectors: [
+      '0x8da5cb5b',
+      '0xf2fde38b',
+      contract: [Contract],
+      remove: [Function: remove],
+      get: [Function: get]
+    ]
+  }
+]
+Diamond cut tx:  0xf227fd54006121eaf37e2df945891462a063572fcc930f4c37e795a440d02d59
+Completed diamond cut
+    ✓ should have three facets -- call to facetAddresses function
+    ✓ facets should have the right function selectors -- call to facetFunctionSelectors function (105ms)
+    ✓ selectors should be associated to facets correctly -- multiple calls to facetAddress function (99ms)
+    ✓ should add test1 functions (573ms)
+    ✓ should test function call (111ms)
+    ✓ should replace supportsInterface function (253ms)
+    ✓ should add test2 functions (636ms)
+    ✓ should remove some test2 functions (491ms)
+    ✓ should remove some test1 functions (611ms)
+    ✓ remove all functions and facets except 'diamondCut' and 'facets' (472ms)
+    ✓ add most functions and facets (1002ms)
+
+
+*/
+
+/*
+
+DiamondCutFacet deployed: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+Diamond deployed: 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+DiamondInit deployed: 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
+
+Deploying facets
+DiamondLoupeFacet deployed: 0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9
+OwnershipFacet deployed: 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9
+
+Diamond Cut: [
+  {
+    facetAddress: '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9',
+    action: 0,
+    functionSelectors: [
+      '0xcdffacc6',
+      '0x52ef6b2c',
+      '0xadfca15e',
+      '0x7a0ed627',
+      '0x01ffc9a7',
+      contract: [Contract],
+      remove: [Function: remove],
+      get: [Function: get]
+    ]
+  },
+  {
+    facetAddress: '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9',
+    action: 0,
+    functionSelectors: [
+      '0x8da5cb5b',
+      '0xf2fde38b',
+      contract: [Contract],
+      remove: [Function: remove],
+      get: [Function: get]
+    ]
+  }
+]
+Diamond cut tx:  0xcb102437ddd71a4c98d8fc4e20c9ed136930cc277518dce24f843c82ab19d748
+Completed diamond cut
+
+*/
