@@ -98,7 +98,7 @@ library LibDiamond {
         if (selectorPosition == 0) {
             addFacet(ds, _facetAddress);            
         }
-        for (uint256 selectorIndex; selectorIndex < _functionSelectors.length; selectorIndex++) {
+        for (uint256 selectorIndex; selectorIndex < _functionSelectors.length;) {
             bytes4 selector = _functionSelectors[selectorIndex];
             address oldFacetAddress = ds.selectorToFacetAndPosition[selector].facetAddress;
             require(oldFacetAddress == address(0), "LibDiamondCut: Can't add function that already exists");
