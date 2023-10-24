@@ -28,13 +28,13 @@ module.exports = {
   },
   networks: {
     goerli: {
-      url: "YOUR_QUICKNODE_HTTP_ENDPOINT",
-      accounts: ["YOUR_PRIVATE_KEY"]
+      url: "https://eth-goerli.g.alchemy.com/v2/v6rWwEcW2dz61mQ7H3d26OSd94KdBSgQ",
+      accounts: ["2bdce7ffa432c70fddf17704520418fdc3e610867e45d906ab8f5277cbbb8e67"]
     }
   },
   etherscan: {
     // Your API key for Etherscan
     // Obtain one at https://etherscan.io/
-    apiKey: "YOUR_ETHERSCAN_API_KEY"
+    apiKey: "R89CFA9UVDNRKBJEHX97NYB79CB7I4XVZH"
   }
 };
