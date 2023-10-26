@@ -1,5 +1,7 @@
 # Diamond-3-Hardhat Implementation
 
+![image](https://github.com/JohnDeveloperJ/diamond-3-hardhat/assets/143453887/2927e7e0-cfaf-45e9-8bff-dd64757bace7)
+
 This is an implementation for [EIP-2535 Diamond Standard](https://github.com/ethereum/EIPs/issues/2535). To learn about other implementations go here: https://github.com/mudgen/diamond
 
 The standard loupe functions have been gas-optimized in this implementation and can be called in on-chain transactions. However keep in mind that a diamond can have any number of functions and facets so it is still possible to get out-of-gas errors when calling loupe functions. Except for the `facetAddress` loupe function which has a fixed gas cost.
