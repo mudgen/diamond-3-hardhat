@@ -13,6 +13,7 @@ import { IDiamondCut } from "../interfaces/IDiamondCut.sol";
 error InitializationFunctionReverted(address _initializationContractAddress, bytes _calldata);
 
 library LibDiamond {
+    // gets a "random" storage position by hashing a string
     bytes32 constant DIAMOND_STORAGE_POSITION = keccak256("diamond.standard.diamond.storage");
 
     struct FacetAddressAndPosition {
@@ -42,6 +43,7 @@ library LibDiamond {
 
     function diamondStorage() internal pure returns (DiamondStorage storage ds) {
         bytes32 position = DIAMOND_STORAGE_POSITION;
+        // assigns struct storage slot to the storage position
         assembly {
             ds.slot := position
         }
